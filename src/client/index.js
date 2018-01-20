@@ -2,8 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+import Header from './components/common/header/header';
+
 const App = () => (
-  <h1>Giphy Cats and Dogs</h1>
+  <Header level={1} text={'Giphy Cats and Dogs'} />
 );
 
 ReactDOM.render(<App />, document.querySelector('#root'));
