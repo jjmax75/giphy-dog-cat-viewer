@@ -14,6 +14,10 @@ import './index.scss';
 
 import Pick from './components/pick/pick';
 
+import fetchBeast from './../server/proxy/proxy';
+
+fetchBeast('cat');
+
 const combinedReducers = combineReducers(gipyDogCatReducers);
 const history = createHistory();
 const routerWithHistory = routerMiddleware(history);
@@ -27,7 +31,7 @@ const store = createStore(
 const App = () => (
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <Route path='/' component={Pick} />
+      <Route path="/" component={Pick} />
     </ConnectedRouter>
   </Provider>
 );
