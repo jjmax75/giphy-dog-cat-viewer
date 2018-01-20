@@ -8,7 +8,10 @@ import './index.scss';
 import Header from './components/common/header/header';
 
 const combinedReducers = combineReducers(gipyDogCatReducers);
-const store = createStore(combinedReducers);
+const store = createStore(
+  combinedReducers,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+);
 
 const App = () => (
   <Provider store={store}>
