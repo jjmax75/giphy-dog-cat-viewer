@@ -8,11 +8,12 @@ import {
   routerReducer,
 } from 'react-router-redux';
 import { applyMiddleware, combineReducers, createStore } from 'redux';
+import thunk from 'redux-thunk';
 import createHistory from 'history/createBrowserHistory';
 import gipyDogCatReducers from './reducers';
 import './index.scss';
 
-import Pick from './components/pick/pick';
+import PickContainer from './containers/pick-container';
 
 import fetchBeast from './../server/proxy/proxy';
 
@@ -25,13 +26,13 @@ const routerWithHistory = routerMiddleware(history);
 const store = createStore(
   combineReducers({ ...combinedReducers, router: routerReducer }),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-  applyMiddleware(routerWithHistory),
+  applyMiddleware(routerWithHistory, thunk),
 );
 
 const App = () => (
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <Route path="/" component={Pick} />
+      <Route path="/" component={PickContainer} />
     </ConnectedRouter>
   </Provider>
 );
