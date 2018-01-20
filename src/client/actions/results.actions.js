@@ -1,9 +1,17 @@
-import { fetchBeast } from './../../server/proxy/proxy';
+import { fetchBeasts } from './../../server/proxy/proxy';
+
+import {
+  UPDATE_BEAST_LIST,
+  UPDATE_ACTIVE_BEAST,
+} from './../../constants/redux-constants';
 
 export const fetchBeastsAction = beastType => {
   return dispatch => {
-    return fetchBeast(beastType)
-      .then(data => console.log(data))
+    return fetchBeasts(beastType)
+      .then(data => {
+        dispatch({ type: UPDATE_ACTIVE_BEAST, payload: beastType });
+        dispatch({ type: UPDATE_BEAST_LIST, payload: { data, beastType } });
+      })
       .catch(error => console.log(error));
   };
 };

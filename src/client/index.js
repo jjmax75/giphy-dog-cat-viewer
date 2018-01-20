@@ -14,17 +14,13 @@ import gipyDogCatReducers from './reducers';
 import './index.scss';
 
 import PickContainer from './containers/pick-container';
+import ResultsContainer from './containers/results-container';
 
-import fetchBeast from './../server/proxy/proxy';
-
-fetchBeast('cat');
-
-const combinedReducers = combineReducers(gipyDogCatReducers);
 const history = createHistory();
 const routerWithHistory = routerMiddleware(history);
 
 const store = createStore(
-  combineReducers({ ...combinedReducers, router: routerReducer }),
+  combineReducers({ ...gipyDogCatReducers, router: routerReducer }),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
   applyMiddleware(routerWithHistory, thunk),
 );
@@ -32,7 +28,10 @@ const store = createStore(
 const App = () => (
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <Route path="/" component={PickContainer} />
+      <React.Fragment>
+        <Route path="/" exact={true} component={PickContainer} />
+        <Route path="/results" component={ResultsContainer} />
+      </React.Fragment>
     </ConnectedRouter>
   </Provider>
 );

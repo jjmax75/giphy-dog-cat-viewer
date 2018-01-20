@@ -4,7 +4,7 @@ const beast = new schema.Entity('beasts');
 
 const beastsSchema = { data: [beast] };
 
-export const fetchBeast = beastType => {
+export const fetchBeasts = beastType => {
   const url = `https://api.giphy.com/v1/gifs/search?api_key=${
     process.env.REACT_APP_GIPHY_API_KEY
   }&q=${beastType}`;
@@ -16,4 +16,4 @@ export const fetchBeast = beastType => {
     .catch(err => console.log(err));
 };
 
-export default fetchBeast;
+export default fetchBeasts;
