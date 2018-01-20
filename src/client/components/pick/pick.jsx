@@ -11,7 +11,6 @@ const Pick = () => (
       <li>Dogs</li>
     </ul>
   </React.Fragment>
-
 );
 
 export default Pick;
