@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Button from './../common/button/button';
-import Header from './../common/header/header';
+import Heading from './../common/heading/heading';
 import Video from './../common/video/video';
 
 class Details extends React.PureComponent {
@@ -16,7 +16,7 @@ class Details extends React.PureComponent {
         />
         {this.props.beast ? (
           <React.Fragment>
-            <Header level="2" text={this.props.beast.title} />
+            <Heading level="2" text={this.props.beast.title} />
             <Video mp4={this.props.beast.images.original.mp4} />
           </React.Fragment>
         ) : null}

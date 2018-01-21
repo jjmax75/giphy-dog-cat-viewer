@@ -7,3 +7,13 @@ body {
   font-family: $font-family;
   color: $base-color;
 }
+
+.grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.col {
+  flex: 1;
+}

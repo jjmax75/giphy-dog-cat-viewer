@@ -5,7 +5,7 @@ import shortid from 'shortid';
 import PropTypes from 'prop-types';
 
 import Button from './../common/button/button';
-import Header from './../common/header/header';
+import Heading from './../common/heading/heading';
 import ResultItem from './result-item/result-item';
 
 class Results extends React.Component {
@@ -54,7 +54,7 @@ class Results extends React.Component {
           />
         </nav>
 
-        <Header level="2" text="Results List" />
+        <Heading level="2" text="Results List" />
         {this.props.beasts.length > 0 ? (
           <div className="results-list">{this.displayResults()}</div>
         ) : null}

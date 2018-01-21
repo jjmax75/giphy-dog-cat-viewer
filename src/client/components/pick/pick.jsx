@@ -1,21 +1,23 @@
+import './pick.scss';
+
 import React from 'react';
 import PropTypes from 'prop-types';
 
 import Button from './../common/button/button';
-import Header from './../common/header/header';
+import Heading from './../common/heading/heading';
 
 const Pick = props => (
   <React.Fragment>
-    <Header level="1" text={'Giphy Cats and Dogs'} />
+    <Heading level="1" text={'Giphy Cats and Dogs'} />
     <p>You can pick between:</p>
-    <ul>
-      <li>
+    <div className="grid">
+      <div className="col">
         <Button text="Cats" action={() => props.pickBeast('cat')} />
-      </li>
-      <li>
+      </div>
+      <div className="col">
         <Button text="Dogs" action={() => props.pickBeast('dog')} />
-      </li>
-    </ul>
+      </div>
+    </div>
   </React.Fragment>
 );
 
