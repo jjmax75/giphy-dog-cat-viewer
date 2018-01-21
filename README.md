@@ -2,6 +2,8 @@
 
 A viewer for giphy gifs of cats and dogs
 
+To install and run - `npm install && npm start`
+
 ## Next steps
 
 * Design and UX
