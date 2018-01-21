@@ -8,7 +8,7 @@ import Button from './../common/button/button';
 import Heading from './../common/heading/heading';
 import ResultItem from './result-item/result-item';
 
-class Results extends React.Component {
+class Results extends React.PureComponent {
   displayResults() {
     return this.props.beasts.map(beast => (
       <ResultItem
