@@ -2,11 +2,11 @@ import { connect } from 'react-redux';
 
 import Pick from './../components/pick/pick';
 
-import { fetchBeastsAction } from './../actions/results.actions';
+import { getBeastsAction } from './../actions/results.actions';
 
 const mapDipatchToProps = (dispatch, ownProps) => ({
   pickBeast: beastType => {
-    dispatch(fetchBeastsAction(beastType, ownProps.history));
+    dispatch(getBeastsAction(beastType, 0, ownProps.history));
   },
 });
 

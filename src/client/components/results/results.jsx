@@ -28,6 +28,27 @@ class Results extends React.Component {
         {this.props.beasts.length > 0 ? (
           <div className="results-list">{this.displayResults()}</div>
         ) : null}
+        {this.props.match.params.offset > 0 ? (
+          <Button
+            text="Prev"
+            action={() =>
+              this.props.changePage(
+                this.props.activeBeast,
+                Number(this.props.match.params.offset) - 25,
+              )
+            }
+          />
+        ) : null}
+
+        <Button
+          text="Next"
+          action={() =>
+            this.props.changePage(
+              this.props.activeBeast,
+              Number(this.props.match.params.offset) + 25,
+            )
+          }
+        />
       </React.Fragment>
     );
   }

@@ -4,10 +4,10 @@ const beast = new schema.Entity('beasts');
 
 const beastsSchema = { data: [beast] };
 
-export const fetchBeasts = beastType => {
+export const fetchBeasts = (beastType, offset) => {
   const url = `https://api.giphy.com/v1/gifs/search?api_key=${
     process.env.REACT_APP_GIPHY_API_KEY
-  }&q=${beastType}`;
+  }&q=${beastType}&offset=${offset}`;
   return fetch(url, {
     method: 'GET',
   })

@@ -32,7 +32,7 @@ const App = () => (
       <React.Fragment>
         <LoaderContainer />
         <Route path="/" exact={true} component={PickContainer} />
-        <Route path="/results" component={ResultsContainer} />
+        <Route path="/results/:offset?" component={ResultsContainer} />
       </React.Fragment>
     </ConnectedRouter>
   </Provider>

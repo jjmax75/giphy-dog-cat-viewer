@@ -2,6 +2,8 @@ import { connect } from 'react-redux';
 
 import Results from './../components/results/results';
 
+import { getBeastsAction } from './../actions/results.actions';
+
 const sendBeastDetails = data =>
   data.result.data.map(id => ({
     title: data.entities.beasts[id].title,
@@ -18,6 +20,13 @@ const mapStateToProps = state => ({
   activeBeast: state.activeBeast,
 });
 
-const ResultsContainer = connect(mapStateToProps)(Results);
+const mapDipatchToProps = (dispatch, ownProps) => ({
+  changePage: (beastType, offset) => {
+    console.log(beastType, offset);
+    dispatch(getBeastsAction(beastType, offset, ownProps.history));
+  },
+});
+
+const ResultsContainer = connect(mapStateToProps, mapDipatchToProps)(Results);
 
 export default ResultsContainer;
