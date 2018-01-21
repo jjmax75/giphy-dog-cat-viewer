@@ -9,8 +9,8 @@ export const fetchBeastsAction = beastType => {
   return dispatch => {
     return fetchBeasts(beastType)
       .then(data => {
-        dispatch({ type: UPDATE_ACTIVE_BEAST, payload: beastType });
         dispatch({ type: UPDATE_BEAST_LIST, payload: { data, beastType } });
+        dispatch({ type: UPDATE_ACTIVE_BEAST, payload: beastType });
       })
       .catch(error => console.log(error));
   };
