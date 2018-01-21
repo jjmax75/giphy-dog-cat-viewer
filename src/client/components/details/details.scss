@@ -1,8 +1,13 @@
-.results-list {
+.details {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+  padding: 20px 0;
+}
+
+.details button {
+  font-size: 1.5em;
 }
 
 .dog {

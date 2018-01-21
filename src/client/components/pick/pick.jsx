@@ -4,20 +4,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Button from './../common/button/button';
-import Heading from './../common/heading/heading';
+import Image from './../common/image/image';
 
 class Pick extends React.PureComponent {
   render() {
     return (
       <React.Fragment>
-        <Heading level="1" text={'Giphy Cats and Dogs'} />
-        <p>You can pick between:</p>
         <div className="grid">
-          <div className="col">
+          <div className="col cat">
             <Button text="Cats" action={() => this.props.pickBeast('cat')} />
+            <Image src="/img/cat.png" title="Pick cats" />
           </div>
-          <div className="col">
+          <div className="col dog">
             <Button text="Dogs" action={() => this.props.pickBeast('dog')} />
+            <Image src="/img/dog.png" title="Pick dogs" />
           </div>
         </div>
       </React.Fragment>

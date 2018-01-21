@@ -17,6 +17,9 @@ import PickContainer from './containers/pick-container';
 import ResultsContainer from './containers/results-container';
 import LoaderContainer from './containers/loader-container';
 import DetailsContainer from './containers/details-container';
+import Header from './components/common/header/header';
+import Footer from './components/common/footer/footer';
+import Heading from './components/common/heading/heading';
 
 const history = createHistory();
 const routerWithHistory = routerMiddleware(history);
@@ -32,9 +35,17 @@ const App = () => (
     <ConnectedRouter history={history}>
       <React.Fragment>
         <LoaderContainer />
-        <Route path="/" exact={true} component={PickContainer} />
-        <Route path="/results/:offset?" component={ResultsContainer} />
-        <Route path="/details/:id" component={DetailsContainer} />
+        <Header>
+          <Heading level="1" text="Giphy Cat &amp; Dog Viewer" />
+        </Header>
+        <main>
+          <Route path="/" exact={true} component={PickContainer} />
+          <Route path="/results/:offset?" component={ResultsContainer} />
+          <Route path="/details/:id" component={DetailsContainer} />
+        </main>
+        <Footer>
+          <p>By John Behan for SWRVE</p>
+        </Footer>
       </React.Fragment>
     </ConnectedRouter>
   </Provider>

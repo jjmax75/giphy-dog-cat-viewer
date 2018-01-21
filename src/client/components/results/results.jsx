@@ -5,7 +5,6 @@ import shortid from 'shortid';
 import PropTypes from 'prop-types';
 
 import Button from './../common/button/button';
-import Heading from './../common/heading/heading';
 import ResultItem from './result-item/result-item';
 
 class Results extends React.PureComponent {
@@ -24,7 +23,7 @@ class Results extends React.PureComponent {
 
   render() {
     return (
-      <React.Fragment>
+      <div className={this.props.activeBeast}>
         <nav>
           <Button
             icon={'\u2190'}
@@ -54,11 +53,10 @@ class Results extends React.PureComponent {
           />
         </nav>
 
-        <Heading level="2" text="Results List" />
         {this.props.beasts.length > 0 ? (
           <div className="results-list">{this.displayResults()}</div>
         ) : null}
-      </React.Fragment>
+      </div>
     );
   }
 }

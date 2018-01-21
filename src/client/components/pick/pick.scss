@@ -2,4 +2,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: calc(100vh - 150px);
+}
+
+.col img {
+  height: 40vh;
+}
+
+.col button {
+  margin: 40px 0;
+}
+
+.col.dog {
+  background-image: url('/img/dog-background.jpg');
+  padding: 20px 0 70px;
+}
+
+.col.cat {
+  background-image: url('/img/cat-background.jpg');
+  padding: 20px 0 70px;
 }

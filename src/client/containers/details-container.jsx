@@ -12,6 +12,7 @@ const mapStateToProps = (state, ownProps) => ({
   beast: state.activeBeast
     ? getBeast(state, ownProps.match.params.id)
     : undefined,
+  beastType: state.activeBeast,
 });
 
 const DetailsContainer = connect(mapStateToProps)(Details);

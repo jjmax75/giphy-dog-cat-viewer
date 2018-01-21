@@ -1,11 +1,23 @@
-$font-family: sans-serif;
+$heading-font-family: 'Shadows Into Light', cursive;
+$base-font-family: 'Lato', sans-serif;
+$base-font-size: 16px;
 $base-color: #333;
+
+html {
+  font-size: $base-font-size;
+}
 
 body {
   margin: 0;
   padding: 0;
-  font-family: $font-family;
+  font-family: $base-font-family;
   color: $base-color;
+}
+
+h1,
+h2,
+button {
+  font-family: $heading-font-family;
 }
 
 .grid {
@@ -16,4 +28,5 @@ body {
 
 .col {
   flex: 1;
+  flex-direction: column;
 }

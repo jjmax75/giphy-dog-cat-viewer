@@ -13,3 +13,10 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 20px 0;
+}

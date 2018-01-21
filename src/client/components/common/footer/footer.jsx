@@ -1,12 +1,11 @@
+import './footer.scss';
+
 import React from 'react';
-// import PropTypes from 'prop-types';
 
 class Footer extends React.PureComponent {
   render() {
-    return <footer>This is the footer</footer>;
+    return <footer>{this.props.children}</footer>;
   }
 }
-
-Footer.propTypes = {};
 
 export default Footer;
