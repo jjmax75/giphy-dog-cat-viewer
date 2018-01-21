@@ -4,6 +4,7 @@ A viewer for giphy gifs of cats and dogs
 
 ## Next steps
 
+* Design and UX
 * Add data to store on next/prev
 * Check if data already available in store before fetching
 * Load images on results page if directly accessed by url or shared link
