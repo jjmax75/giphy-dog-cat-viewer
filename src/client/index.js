@@ -16,6 +16,7 @@ import './index.scss';
 import PickContainer from './containers/pick-container';
 import ResultsContainer from './containers/results-container';
 import LoaderContainer from './containers/loader-container';
+import DetailsContainer from './containers/details-container';
 
 const history = createHistory();
 const routerWithHistory = routerMiddleware(history);
@@ -33,6 +34,7 @@ const App = () => (
         <LoaderContainer />
         <Route path="/" exact={true} component={PickContainer} />
         <Route path="/results/:offset?" component={ResultsContainer} />
+        <Route path="/details/:id" component={DetailsContainer} />
       </React.Fragment>
     </ConnectedRouter>
   </Provider>

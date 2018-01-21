@@ -7,6 +7,11 @@ A viewer for giphy gifs of cats and dogs
 * Add data to store on next/prev
 * Check if data already available in store before fetching
 * Load images on results page if directly accessed by url or shared link
+* more complete unit testing with coverage and test with bad data, etc
+* E2E testing with selenium
+* Detail view as modal
+* Prev button can set param to negative Number
+* Disable next button based on amount of images available(accessible from Giphy API)
 
 ## Features
 

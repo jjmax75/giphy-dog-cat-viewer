@@ -9,6 +9,7 @@ const sendBeastDetails = data =>
     title: data.entities.beasts[id].title,
     previewImage: data.entities.beasts[id].images.fixed_width_still.url,
     previewAnimation: data.entities.beasts[id].images.fixed_width.url,
+    id,
   }));
 
 const mapStateToProps = state => ({
@@ -22,7 +23,6 @@ const mapStateToProps = state => ({
 
 const mapDipatchToProps = (dispatch, ownProps) => ({
   changePage: (beastType, offset) => {
-    console.log(beastType, offset);
     dispatch(getBeastsAction(beastType, offset, ownProps.history));
   },
 });

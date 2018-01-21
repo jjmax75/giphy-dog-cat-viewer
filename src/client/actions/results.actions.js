@@ -1,7 +1,5 @@
 import { fetchBeasts } from './../../server/proxy/proxy';
 
-import { LIMIT } from './../../constants/app-constants';
-
 import {
   UPDATE_BEAST_LIST,
   UPDATE_ACTIVE_BEAST,

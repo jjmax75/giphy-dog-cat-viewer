@@ -16,6 +16,8 @@ class Results extends React.Component {
         still={beast.previewImage}
         animated={beast.previewAnimation}
         title={beast.title}
+        id={beast.id}
+        history={this.props.history}
       />
     ));
   }
@@ -23,13 +25,10 @@ class Results extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Button text="Go back" action={() => this.props.history.goBack()} />
-        <Header level="2" text="Results List" />
-        {this.props.beasts.length > 0 ? (
-          <div className="results-list">{this.displayResults()}</div>
-        ) : null}
-        {this.props.match.params.offset > 0 ? (
+        <nav>
           <Button
+            icon={'\u2190'}
+            disabled={this.props.match.params.offset <= 0}
             text="Prev"
             action={() =>
               this.props.changePage(
@@ -38,17 +37,27 @@ class Results extends React.Component {
               )
             }
           />
-        ) : null}
+          <Button
+            icon={'\u2191'}
+            text="Pick Again"
+            action={() => this.props.history.push('/')}
+          />
+          <Button
+            icon={'\u2192'}
+            text="Next"
+            action={() =>
+              this.props.changePage(
+                this.props.activeBeast,
+                Number(this.props.match.params.offset) + 25,
+              )
+            }
+          />
+        </nav>
 
-        <Button
-          text="Next"
-          action={() =>
-            this.props.changePage(
-              this.props.activeBeast,
-              Number(this.props.match.params.offset) + 25,
-            )
-          }
-        />
+        <Header level="2" text="Results List" />
+        {this.props.beasts.length > 0 ? (
+          <div className="results-list">{this.displayResults()}</div>
+        ) : null}
       </React.Fragment>
     );
   }

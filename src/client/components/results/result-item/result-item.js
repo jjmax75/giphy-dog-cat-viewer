@@ -36,7 +36,10 @@ class ResultItem extends React.Component {
 
   render() {
     return (
-      <div className="result-item">
+      <div
+        className="result-item"
+        onClick={() => this.props.history.push(`/details/${this.props.id}`)}
+      >
         <Image
           src={this.state.imgSrc}
           title={this.props.title}
@@ -52,6 +55,7 @@ ResultItem.propTypes = {
   still: PropTypes.string.isRequired,
   animated: PropTypes.string,
   title: PropTypes.string,
+  id: PropTypes.string.isRequired,
 };
 
 export default ResultItem;
